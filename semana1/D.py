@@ -7,13 +7,14 @@ def d(case):
     days = 1
     climb_distance = int(case[U])
     climbed = climb_distance
+    fatige = climb_distance * int(case[F])/100
     print(case)
     while(climbed > 0 and climbed < int(case[H])):
         climbed = climbed - int(case[D])
         if(climbed < 0):
             break
         days = days + 1
-        climb_distance = climb_distance - climb_distance * int(case[F])/100
+        climb_distance = climb_distance - fatige
         climbed = climbed + climb_distance
 
     if climbed > int(case[H]):
