@@ -8,8 +8,7 @@ def d(case):
     climb_distance = int(case[U])
     climbed = climb_distance
     fatige = climb_distance * int(case[F])/100
-    print(case)
-    while(climbed > 0 and climbed < int(case[H])):
+    while(climbed > 0 and climbed <= int(case[H])):
         climbed = climbed - int(case[D])
         if(climbed < 0):
             break
@@ -17,7 +16,7 @@ def d(case):
         climb_distance = climb_distance - fatige
         climbed = climbed + climb_distance
 
-    if climbed > int(case[H]):
+    if climbed >= int(case[H]):
         print("success on day %s" % days)
     else:
         print("failure on day %s" % days)
